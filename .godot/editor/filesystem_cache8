@@ -1,28 +1,33 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702900876
-board.tscn::PackedScene::4485074951755843786::1702900064::0::1::::<><>::uid://cq2cyp5xbn4oh::::res://assets/board.png
-circle.tscn::PackedScene::7472538454137082866::1702900064::0::1::::<><>::uid://cbltwgbx4yotb::::res://assets/circle.png
-cross.tscn::PackedScene::2001390680217786809::1702900064::0::1::::<><>::uid://bns2riiucax3v::::res://assets/cross.png
-fog.gd::GDScript::-1::1702900207::0::1::::<>Node2D<>::
-fog.tscn::PackedScene::6242370058658707499::1702900064::0::1::::<><>::uid://bcupnq2wttjgs::::res://assets/fogs/fog1.png<>res://fog.gd<>uid://cg1i7ori35a5f::::res://assets/fogs/fog2.png<>uid://0q4ssncgtujd::::res://assets/fogs/fog0.png<>uid://due4lkumv5jni::::res://assets/fogs/fog3.png<>uid://brnvy0penp30u::::res://assets/fogs/fog4.png<>uid://cd8u3ctycxq23::::res://assets/fogs/fog5.png
-gameover.tscn::PackedScene::5735078835360202427::1702900933::0::1::::<><>::res://instructions.gd<>uid://dydpmg2guyr76::::res://assets/winner.png<>uid://bw85vgt3b8xql::::res://assets/again normal.png<>uid://b7q8fq7amlr6k::::res://assets/again pressed.png
-instructions.gd::GDScript::-1::1702882639::0::1::::<>Control<>::
-instructions.tscn::PackedScene::3948723490600036089::1702900933::0::1::::<><>::uid://bwjh72jxp0sjl::::res://assets/instructions.png<>res://instructions.gd<>uid://dkxpk2wd7cddd::::res://assets/got it normal.png<>uid://2ksdhpkqjsr2::::res://assets/got it pressed.png
-main.gd::GDScript::-1::1702895699::0::1::::<>Node<>::
-main.tscn::PackedScene::564144347320613946::1702900250::0::1::::<><>::res://main.gd<>uid://b45ur8y2kicpe::::res://board.tscn<>uid://3rqu2t3nfdo0::::res://cross.tscn<>uid://dep0u71m5brnm::::res://circle.tscn<>uid://bwi15thj61qer::::res://instructions.tscn<>uid://cu636m2qh62ep::::res://fog.tscn
-::res://assets/::1702900876
+::res://::1702910285
+board.tscn::PackedScene::4485074951755843786::1702910285::0::1::::<><>::uid://cq2cyp5xbn4oh::::res://assets/board.png
+circle.tscn::PackedScene::7472538454137082866::1702910285::0::1::::<><>::uid://cbltwgbx4yotb::::res://assets/circle.png
+cross.tscn::PackedScene::2001390680217786809::1702910285::0::1::::<><>::uid://bns2riiucax3v::::res://assets/cross.png
+fog.gd::GDScript::-1::1702905623::0::1::::<>Node2D<>::
+fog.tscn::PackedScene::6242370058658707499::1702910285::0::1::::<><>::uid://bcupnq2wttjgs::::res://assets/fogs/fog1.png<>res://fog.gd<>uid://cg1i7ori35a5f::::res://assets/fogs/fog2.png<>uid://0q4ssncgtujd::::res://assets/fogs/fog0.png<>uid://due4lkumv5jni::::res://assets/fogs/fog3.png<>uid://brnvy0penp30u::::res://assets/fogs/fog4.png<>uid://cd8u3ctycxq23::::res://assets/fogs/fog5.png
+gameover.tscn::PackedScene::5735078835360202427::1702910285::0::1::::<><>::res://message.gd<>uid://dydpmg2guyr76::::res://assets/winner.png<>uid://bw85vgt3b8xql::::res://assets/again normal.png<>uid://b7q8fq7amlr6k::::res://assets/again pressed.png
+instructions.tscn::PackedScene::3948723490600036089::1702910285::0::1::::<><>::uid://bwjh72jxp0sjl::::res://assets/instructions.png<>res://message.gd<>uid://dkxpk2wd7cddd::::res://assets/got it normal.png<>uid://2ksdhpkqjsr2::::res://assets/got it pressed.png
+main.gd::GDScript::-1::1702910282::0::1::::<>Node<>::
+main.tscn::PackedScene::564144347320613946::1702910285::0::1::::<><>::res://main.gd<>uid://b45ur8y2kicpe::::res://board.tscn<>uid://3rqu2t3nfdo0::::res://cross.tscn<>uid://dep0u71m5brnm::::res://circle.tscn<>uid://bwi15thj61qer::::res://instructions.tscn<>uid://cu636m2qh62ep::::res://fog.tscn<>res://sidepanel.gd<>uid://b1i2drbx0e8ah::::res://assets/your turn.png<>uid://cnyd57s2exhnn::::res://gameover.tscn<>uid://dydpmg2guyr76::::res://assets/winner.png<>uid://ck1akqifndp41::::res://assets/computer turn.png<>uid://irqr3tqqierg::::res://assets/loser.png<>uid://drbhcn34jitgj::::res://assets/draw.png
+message.gd::GDScript::-1::1702902192::0::1::::<>Control<>::
+sidepanel.gd::GDScript::-1::1702909670::0::1::::<>Panel<>::
+::res://assets/::1702910563
 again normal.png::CompressedTexture2D::4000559066835019999::1702900866::1702900876::1::::<><>::
 again pressed.png::CompressedTexture2D::4667507203729744260::1702900868::1702900875::1::::<><>::
 board.png::CompressedTexture2D::5951766193234865327::1702861375::1702861375::1::::<><>::
 circle.png::CompressedTexture2D::4866931594416996463::1702860759::1702860750::1::::<><>::
+computer turn.png::CompressedTexture2D::5528422336287852472::1702907753::1702907753::1::::<><>::
 cross.png::CompressedTexture2D::3337704601318320969::1702860759::1702860750::1::::<><>::
 draw.png::CompressedTexture2D::8354966088605154961::1702859778::1702859778::1::::<><>::
 got it normal.png::CompressedTexture2D::7909561240928850021::1702871205::1702871205::1::::<><>::
 got it pressed.png::CompressedTexture2D::1916841210330611181::1702871205::1702871205::1::::<><>::
 instructions.png::CompressedTexture2D::3949638240970430557::1702866987::1702866993::1::::<><>::
 loser.png::CompressedTexture2D::597608502057677656::1702859778::1702859778::1::::<><>::
+os turn.png::CompressedTexture2D::8212870882008837977::1702910563::1702910563::1::::<><>::
 single fog.png::CompressedTexture2D::7817471319562214345::1702883542::1702885961::1::::<><>::
 winner.png::CompressedTexture2D::8850919973222738851::1702859778::1702859778::1::::<><>::
+xs turn.png::CompressedTexture2D::8691575359430987666::1702910563::1702910563::1::::<><>::
+your turn.png::CompressedTexture2D::4229491252021205851::1702907753::1702907753::1::::<><>::
 ::res://assets/fogs/::1702887576
 fog0.png::CompressedTexture2D::1789545037698700669::1702887159::1702887565::1::::<><>::
 fog1.png::CompressedTexture2D::2569020779371670602::1702887159::1702887566::1::::<><>::

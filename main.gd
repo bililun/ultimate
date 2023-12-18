@@ -1,6 +1,6 @@
 extends Node
 
-enum State {INSTRUCTIONS, PLAYER, COMPUTER, GAMEOVER}
+enum State {INSTRUCTIONS, PLAYER, PLAYER2, COMPUTER, GAMEOVER}
 
 var cell_size: int
 var removables: Array
@@ -9,6 +9,9 @@ var grid_state: Array
 var big_grid_state: Array # use 9 for draws
 var game_state: State
 var target_miniboard: Vector2i # (-1, -1) means any
+
+var single_player = true
+var time_per_turn = 12
 
 @export var cross_scene: PackedScene
 @export var circle_scene: PackedScene
@@ -38,7 +41,9 @@ func new_game():
 					  [0,0,0],
 					  [0,0,0]]
 	game_state = State.INSTRUCTIONS
+	$Instructions.show_and_enable()
 	target_miniboard = Vector2(-1, -1)
+	$SidePanel.new_game(single_player, time_per_turn)
 	$Fog.new_game(cell_size, 0.2)
 	# hide the highlight panel bc you can play anywhere
 	$HighlightPanel.visible = false
@@ -46,6 +51,7 @@ func new_game():
 
 
 func game_over(winner):
+	game_state = State.GAMEOVER
 	match winner:
 		1:
 			$GameOver.change_texture(0)
@@ -55,16 +61,21 @@ func game_over(winner):
 			$GameOver.change_texture(2)
 	$GameOver.show_and_enable()
 	$Fog.game_over()
-
+	$SidePanel.game_over()
 
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		match game_state:
 			State.INSTRUCTIONS:
-				# handled with button and signals
+				# handled with button and signal
 				pass
 			State.PLAYER:
+				if event.position.x < cell_size * 9:
+					handle_board_click(event) 
+				else:
+					handle_panel_click(event)
+			State.PLAYER2:
 				if event.position.x < cell_size * 9:
 					handle_board_click(event) 
 				else:
@@ -72,17 +83,21 @@ func _input(event):
 			State.COMPUTER:
 				pass
 			State.GAMEOVER:
-				print("todo gameover")
+				# handled with button and signal
+				pass
 
 
 func handle_board_click(event):
+	if not (game_state == State.PLAYER or game_state == State.PLAYER2):
+		return
+	
 	var grid_pos = Vector2i(event.position / cell_size)
 	var mb = get_miniboard(grid_pos)
 	# if (newgame or clicked on target or target is already decided) and that cell isn't clicked
 	if (target_miniboard == Vector2i(-1, -1) or mb == target_miniboard or big_grid_state[target_miniboard.y][target_miniboard.x] != 0) and grid_state[grid_pos.y][grid_pos.x] == 0:
 		take_turn(grid_pos)
 	else:
-		print("nope. tmb=%v, mb=%v, big_grid_state[tmb]=%d, grid_state[grid_pos]=%d" % [target_miniboard, mb, big_grid_state[target_miniboard.x][target_miniboard.y], grid_state[grid_pos.y][grid_pos.x]])
+		print("nope. tmb=%v, mb=%v, big_grid_state[tmb]=%d, grid_state[grid_pos]=%d" % [target_miniboard, mb, big_grid_state[target_miniboard.y][target_miniboard.x], grid_state[grid_pos.y][grid_pos.x]])
 
 
 func take_turn(grid_pos):
@@ -90,9 +105,8 @@ func take_turn(grid_pos):
 	grid_state[grid_pos.y][grid_pos.x] = turn
 	create_marker(turn, grid_pos)
 	check_wins(grid_pos)
-	turn *= -1
+	toggle_turn()
 	target_miniboard = get_pos_within_miniboard(grid_pos)
-	print("tmb updated ", target_miniboard)
 	$Fog.update_target_miniboard(target_miniboard)
 
 	# if this is the first turn, position and visible
@@ -114,6 +128,26 @@ func take_turn(grid_pos):
 		target_pos = Vector2(20, 20)
 	tween.tween_property($HighlightPanel, "position", target_pos, duration)
 	tween.tween_property($HighlightPanel, "size", target_size, duration)
+
+
+func computer_take_turn():
+	if not single_player or game_state != State.COMPUTER:
+		return
+	# extremely advanced algorithm
+	var grid_pos = Vector2i(randi() % 9, randi() % 9)
+	var mb = get_miniboard(grid_pos)
+	while not (
+		(target_miniboard == Vector2i(-1,-1) # anything on first move
+		or mb == target_miniboard # playing in correct target
+		or big_grid_state[target_miniboard.y][target_miniboard.x] != 0 # free range
+		) 
+		and grid_state[grid_pos.y][grid_pos.x] == 0 # empty cell
+		and big_grid_state[mb.y][mb.x] == 0 # mb undecided
+		):
+		grid_pos = Vector2i(randi() % 9, randi() % 9)
+		mb = get_miniboard(grid_pos)
+	# must have a valid turn now
+	take_turn(grid_pos)
 
 
 func handle_panel_click(event):
@@ -138,8 +172,6 @@ func check_wins(grid_pos):
 	var miniboard_winner = check_board_win(grid_state, grid_pos, mb * 3)
 	if miniboard_winner != 0:
 		big_grid_state[mb.y][mb.x] = miniboard_winner
-		print("miniboard winner! mb is %v and winner is %d" %[mb, miniboard_winner])
-		print(big_grid_state)
 		create_marker(miniboard_winner, mb * 3, true)
 		var bigboard_winner = check_board_win(big_grid_state, mb, Vector2i(0,0))
 		if bigboard_winner != 0:
@@ -169,12 +201,39 @@ func check_board_win(grid_to_check, move_pos, top_left):
 		return 0
 
 
+func toggle_turn():
+	turn *= -1
+	if game_state == State.COMPUTER:
+		game_state = State.PLAYER
+	elif game_state == State.PLAYER:
+		if single_player:
+			game_state = State.COMPUTER
+			create_tween().tween_callback(computer_take_turn).set_delay(1)
+		else:
+			game_state = State.PLAYER2
+	elif game_state == State.PLAYER2:
+		game_state = State.PLAYER
+	else:
+		return
+	
+	$SidePanel.toggle_turn()
+	$SidePanel.start_timer()
+
 func _on_instructions_button_pressed():
 	game_state = State.PLAYER
 	$Instructions.hide_and_disable()
+	$SidePanel.start_timer()
 
 func _on_gameover_button_pressed():
 	new_game()
+
+func _on_timer_timeout():
+	print("timer timed out!")
+	var warn_tween = create_tween()
+	warn_tween.set_trans(Tween.TRANS_CUBIC)
+	warn_tween.tween_property($WarningPanel, "modulate:a", 0.1, 0.1)
+	warn_tween.tween_property($WarningPanel, "modulate:a", 0, 0.1)
+	toggle_turn()
 
 func get_miniboard(grid_pos):
 	return Vector2i(grid_pos / 3)

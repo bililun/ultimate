@@ -1,7 +1,10 @@
 Panel
+Timer
+Sprite2D
+Label
+RichTextLabel
 Node2D
 AnimationPlayer
-Sprite2D
 Control
 TextureButton
 Button

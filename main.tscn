@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ibjm0qenul6a"]
+[gd_scene load_steps=19 format=3 uid="uid://ibjm0qenul6a"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bjkn7"]
 [ext_resource type="PackedScene" uid="uid://b45ur8y2kicpe" path="res://board.tscn" id="2_712ly"]
@@ -6,9 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://dep0u71m5brnm" path="res://circle.tscn" id="3_okc65"]
 [ext_resource type="PackedScene" uid="uid://bwi15thj61qer" path="res://instructions.tscn" id="5_7fv8w"]
 [ext_resource type="PackedScene" uid="uid://cu636m2qh62ep" path="res://fog.tscn" id="5_cvboi"]
+[ext_resource type="Script" path="res://sidepanel.gd" id="6_bwsek"]
+[ext_resource type="Texture2D" uid="uid://b1i2drbx0e8ah" path="res://assets/your turn.png" id="6_q50i6"]
 [ext_resource type="PackedScene" uid="uid://cnyd57s2exhnn" path="res://gameover.tscn" id="7_kobua"]
 [ext_resource type="Texture2D" uid="uid://dydpmg2guyr76" path="res://assets/winner.png" id="8_6bj0d"]
+[ext_resource type="Texture2D" uid="uid://ck1akqifndp41" path="res://assets/computer turn.png" id="8_xu8ib"]
+[ext_resource type="Texture2D" uid="uid://dv3i8gvct2sra" path="res://assets/xs turn.png" id="9_31t14"]
 [ext_resource type="Texture2D" uid="uid://irqr3tqqierg" path="res://assets/loser.png" id="9_e8egq"]
+[ext_resource type="Texture2D" uid="uid://dpam1v0ejclvd" path="res://assets/os turn.png" id="10_gojvj"]
 [ext_resource type="Texture2D" uid="uid://drbhcn34jitgj" path="res://assets/draw.png" id="10_umt5e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhqun"]
@@ -16,6 +21,9 @@ bg_color = Color(0.176471, 0.592157, 0.694118, 0.392157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6w00"]
 bg_color = Color(0.843137, 0.815686, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4y6v2"]
+bg_color = Color(0.870588, 0.156863, 0.156863, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_bjkn7")
@@ -38,6 +46,43 @@ offset_left = 720.0
 offset_right = 1080.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_a6w00")
+script = ExtResource("6_bwsek")
+singleplayer_textures = Array[Texture2D]([ExtResource("6_q50i6"), ExtResource("8_xu8ib")])
+twoplayer_textures = Array[Texture2D]([ExtResource("9_31t14"), ExtResource("10_gojvj")])
+
+[node name="Sprite2D" type="Sprite2D" parent="SidePanel"]
+texture = ExtResource("6_q50i6")
+centered = false
+
+[node name="Label" type="Label" parent="SidePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -138.0
+offset_right = 114.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 200
+text = "20"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="SidePanel"]
+wait_time = 20.0
+
+[node name="WarningPanel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4y6v2")
 
 [node name="Instructions" parent="." instance=ExtResource("5_7fv8w")]
 
@@ -45,5 +90,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_a6w00")
 visible = false
 textures = Array[Texture2D]([ExtResource("8_6bj0d"), ExtResource("9_e8egq"), ExtResource("10_umt5e")])
 
+[connection signal="timeout" from="SidePanel/Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_pressed" from="Instructions" to="." method="_on_instructions_button_pressed"]
 [connection signal="button_pressed" from="GameOver" to="." method="_on_gameover_button_pressed"]
