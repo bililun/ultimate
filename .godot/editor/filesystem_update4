@@ -5,3 +5,4 @@ res://circle.tscn
 res://instructions.tscn
 res://fog.tscn
 res://main.gd
+res://fog.gd

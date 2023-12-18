@@ -35,7 +35,7 @@ func new_game():
 				  [0,0,0, 0,0,0, 0,0,0]]
 	game_state = State.INSTRUCTIONS
 	target_miniboard = Vector2(-1, -1)
-	$Fog.new_game(cell_size)
+	$Fog.new_game(cell_size, 0.2)
 	# hide the highlight panel bc you can play anywhere
 	$HighlightPanel.visible = false
 
@@ -76,11 +76,13 @@ func take_turn(grid_pos):
 	if not $HighlightPanel.visible:
 		$HighlightPanel.position = get_miniboard(grid_pos) * cell_size * 3 + Vector2i(20, 20)
 		$HighlightPanel.visible = true
-		print("visibled it to ", $HighlightPanel.position)
 	
 	# tween it
+	var duration = 0.2
 	var tween = create_tween()
-	tween.tween_property($HighlightPanel, "position", Vector2(target_miniboard * cell_size * 3 + Vector2i(20,20)), 0.1)
+	tween.set_trans(Tween.TRANS_CUBIC)
+#	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($HighlightPanel, "position", Vector2(target_miniboard * cell_size * 3 + Vector2i(20,20)), duration)
 
 
 func handle_panel_click(event):

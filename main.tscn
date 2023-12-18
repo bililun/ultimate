@@ -26,7 +26,6 @@ offset_bottom = 200.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dhqun")
 
 [node name="Fog" parent="." instance=ExtResource("5_cvboi")]
-visible = false
 
 [node name="SidePanel" type="Panel" parent="."]
 offset_left = 720.0
