@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ibjm0qenul6a"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_bjkn7"]
+[ext_resource type="PackedScene" uid="uid://b45ur8y2kicpe" path="res://board.tscn" id="2_712ly"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6w00"]
+bg_color = Color(0.843137, 0.815686, 0.968627, 1)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_bjkn7")
+
+[node name="Board" parent="." instance=ExtResource("2_712ly")]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 720.0
+offset_right = 1080.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a6w00")

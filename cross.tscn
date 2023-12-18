@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://3rqu2t3nfdo0"]
+
+[ext_resource type="Texture2D" uid="uid://bns2riiucax3v" path="res://assets/cross.png" id="1_dnngb"]
+
+[node name="Cross" type="Sprite2D"]
+texture = ExtResource("1_dnngb")
+centered = false
