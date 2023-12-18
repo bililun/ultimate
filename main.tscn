@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ibjm0qenul6a"]
+[gd_scene load_steps=13 format=3 uid="uid://ibjm0qenul6a"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bjkn7"]
 [ext_resource type="PackedScene" uid="uid://b45ur8y2kicpe" path="res://board.tscn" id="2_712ly"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dep0u71m5brnm" path="res://circle.tscn" id="3_okc65"]
 [ext_resource type="PackedScene" uid="uid://bwi15thj61qer" path="res://instructions.tscn" id="5_7fv8w"]
 [ext_resource type="PackedScene" uid="uid://cu636m2qh62ep" path="res://fog.tscn" id="5_cvboi"]
+[ext_resource type="PackedScene" uid="uid://cnyd57s2exhnn" path="res://gameover.tscn" id="7_kobua"]
+[ext_resource type="Texture2D" uid="uid://dydpmg2guyr76" path="res://assets/winner.png" id="8_6bj0d"]
+[ext_resource type="Texture2D" uid="uid://irqr3tqqierg" path="res://assets/loser.png" id="9_e8egq"]
+[ext_resource type="Texture2D" uid="uid://drbhcn34jitgj" path="res://assets/draw.png" id="10_umt5e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhqun"]
 bg_color = Color(0.176471, 0.592157, 0.694118, 0.392157)
@@ -21,8 +25,10 @@ circle_scene = ExtResource("3_okc65")
 [node name="Board" parent="." instance=ExtResource("2_712ly")]
 
 [node name="HighlightPanel" type="Panel" parent="."]
-offset_right = 200.0
-offset_bottom = 200.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 220.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dhqun")
 
 [node name="Fog" parent="." instance=ExtResource("5_cvboi")]
@@ -35,4 +41,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_a6w00")
 
 [node name="Instructions" parent="." instance=ExtResource("5_7fv8w")]
 
+[node name="GameOver" parent="." instance=ExtResource("7_kobua")]
+visible = false
+textures = Array[Texture2D]([ExtResource("8_6bj0d"), ExtResource("9_e8egq"), ExtResource("10_umt5e")])
+
 [connection signal="button_pressed" from="Instructions" to="." method="_on_instructions_button_pressed"]
+[connection signal="button_pressed" from="GameOver" to="." method="_on_gameover_button_pressed"]

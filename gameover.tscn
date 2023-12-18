@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwi15thj61qer"]
+[gd_scene load_steps=7 format=3 uid="uid://cnyd57s2exhnn"]
 
-[ext_resource type="Texture2D" uid="uid://bwjh72jxp0sjl" path="res://assets/instructions.png" id="1_84jo5"]
-[ext_resource type="Script" path="res://message.gd" id="1_bk5m0"]
-[ext_resource type="Texture2D" uid="uid://dkxpk2wd7cddd" path="res://assets/got it normal.png" id="2_ne51x"]
-[ext_resource type="Texture2D" uid="uid://2ksdhpkqjsr2" path="res://assets/got it pressed.png" id="3_1jt3v"]
+[ext_resource type="Script" path="res://message.gd" id="1_k02fa"]
+[ext_resource type="Texture2D" uid="uid://dydpmg2guyr76" path="res://assets/winner.png" id="2_u8rak"]
+[ext_resource type="Texture2D" uid="uid://bw85vgt3b8xql" path="res://assets/again normal.png" id="3_1f4vp"]
+[ext_resource type="Texture2D" uid="uid://b7q8fq7amlr6k" path="res://assets/again pressed.png" id="4_w6tya"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wq8lj"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -11,14 +11,14 @@ bg_color = Color(0, 0, 0, 0.392157)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1mq2"]
 bg_color = Color(0.843137, 0.815686, 0.968627, 1)
 
-[node name="Instructions" type="Control"]
+[node name="GameOver" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bk5m0")
+script = ExtResource("1_k02fa")
 
 [node name="BGPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -44,10 +44,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g1mq2")
 
-[node name="InstructionsImage" type="Sprite2D" parent="."]
-position = Vector2(540, 200)
+[node name="MessageImage" type="Sprite2D" parent="."]
+position = Vector2(540, 360)
 scale = Vector2(0.67, 0.67)
-texture = ExtResource("1_84jo5")
+texture = ExtResource("2_u8rak")
 
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 1
@@ -62,7 +62,7 @@ offset_right = 86.0
 offset_bottom = 187.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_ne51x")
-texture_pressed = ExtResource("3_1jt3v")
+texture_normal = ExtResource("3_1f4vp")
+texture_pressed = ExtResource("4_w6tya")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

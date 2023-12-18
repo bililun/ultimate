@@ -1,16 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702892666
-board.tscn::PackedScene::4485074951755843786::1702892587::0::1::::<><>::uid://cq2cyp5xbn4oh::::res://assets/board.png
-circle.tscn::PackedScene::7472538454137082866::1702892587::0::1::::<><>::uid://cbltwgbx4yotb::::res://assets/circle.png
-cross.tscn::PackedScene::2001390680217786809::1702892587::0::1::::<><>::uid://bns2riiucax3v::::res://assets/cross.png
-fog.gd::GDScript::-1::1702891578::0::1::::<>Node2D<>::
-fog.tscn::PackedScene::6242370058658707499::1702892587::0::1::::<><>::uid://bcupnq2wttjgs::::res://assets/fogs/fog1.png<>res://fog.gd<>uid://cg1i7ori35a5f::::res://assets/fogs/fog2.png<>uid://0q4ssncgtujd::::res://assets/fogs/fog0.png<>uid://due4lkumv5jni::::res://assets/fogs/fog3.png<>uid://brnvy0penp30u::::res://assets/fogs/fog4.png<>uid://cd8u3ctycxq23::::res://assets/fogs/fog5.png
+::res://::1702900876
+board.tscn::PackedScene::4485074951755843786::1702900064::0::1::::<><>::uid://cq2cyp5xbn4oh::::res://assets/board.png
+circle.tscn::PackedScene::7472538454137082866::1702900064::0::1::::<><>::uid://cbltwgbx4yotb::::res://assets/circle.png
+cross.tscn::PackedScene::2001390680217786809::1702900064::0::1::::<><>::uid://bns2riiucax3v::::res://assets/cross.png
+fog.gd::GDScript::-1::1702900207::0::1::::<>Node2D<>::
+fog.tscn::PackedScene::6242370058658707499::1702900064::0::1::::<><>::uid://bcupnq2wttjgs::::res://assets/fogs/fog1.png<>res://fog.gd<>uid://cg1i7ori35a5f::::res://assets/fogs/fog2.png<>uid://0q4ssncgtujd::::res://assets/fogs/fog0.png<>uid://due4lkumv5jni::::res://assets/fogs/fog3.png<>uid://brnvy0penp30u::::res://assets/fogs/fog4.png<>uid://cd8u3ctycxq23::::res://assets/fogs/fog5.png
+gameover.tscn::PackedScene::5735078835360202427::1702900933::0::1::::<><>::res://instructions.gd<>uid://dydpmg2guyr76::::res://assets/winner.png<>uid://bw85vgt3b8xql::::res://assets/again normal.png<>uid://b7q8fq7amlr6k::::res://assets/again pressed.png
 instructions.gd::GDScript::-1::1702882639::0::1::::<>Control<>::
-instructions.tscn::PackedScene::3948723490600036089::1702892587::0::1::::<><>::uid://bwjh72jxp0sjl::::res://assets/instructions.png<>res://instructions.gd<>uid://dkxpk2wd7cddd::::res://assets/got it normal.png<>uid://2ksdhpkqjsr2::::res://assets/got it pressed.png
-main.gd::GDScript::-1::1702892343::0::1::::<>Node<>::
-main.tscn::PackedScene::564144347320613946::1702892587::0::1::::<><>::res://main.gd<>uid://b45ur8y2kicpe::::res://board.tscn<>uid://3rqu2t3nfdo0::::res://cross.tscn<>uid://dep0u71m5brnm::::res://circle.tscn<>uid://bwi15thj61qer::::res://instructions.tscn<>uid://cu636m2qh62ep::::res://fog.tscn
-::res://assets/::1702887269
-again.png::CompressedTexture2D::4000559066835019999::1702859778::1702859778::1::::<><>::
+instructions.tscn::PackedScene::3948723490600036089::1702900933::0::1::::<><>::uid://bwjh72jxp0sjl::::res://assets/instructions.png<>res://instructions.gd<>uid://dkxpk2wd7cddd::::res://assets/got it normal.png<>uid://2ksdhpkqjsr2::::res://assets/got it pressed.png
+main.gd::GDScript::-1::1702895699::0::1::::<>Node<>::
+main.tscn::PackedScene::564144347320613946::1702900250::0::1::::<><>::res://main.gd<>uid://b45ur8y2kicpe::::res://board.tscn<>uid://3rqu2t3nfdo0::::res://cross.tscn<>uid://dep0u71m5brnm::::res://circle.tscn<>uid://bwi15thj61qer::::res://instructions.tscn<>uid://cu636m2qh62ep::::res://fog.tscn
+::res://assets/::1702900876
+again normal.png::CompressedTexture2D::4000559066835019999::1702900866::1702900876::1::::<><>::
+again pressed.png::CompressedTexture2D::4667507203729744260::1702900868::1702900875::1::::<><>::
 board.png::CompressedTexture2D::5951766193234865327::1702861375::1702861375::1::::<><>::
 circle.png::CompressedTexture2D::4866931594416996463::1702860759::1702860750::1::::<><>::
 cross.png::CompressedTexture2D::3337704601318320969::1702860759::1702860750::1::::<><>::

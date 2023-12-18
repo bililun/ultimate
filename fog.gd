@@ -12,6 +12,7 @@ var meander_duration = 16
 var collide_duration = 0.2 # if you're running into the player's target miniboard
 
 var blob_tween
+var inner_tweens: Array
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,6 +39,7 @@ func create_inner_tweens():
 		tween.set_parallel(true)
 		tween.tween_property(rotator_node, "rotation_degrees", 360 * flip, durations[t]).as_relative()
 		tween.tween_property(fog_sprite, "rotation_degrees", 360 * flip * -1, durations[t]).as_relative()
+		inner_tweens.append(tween)
 		
 
 func update_target_miniboard(target_miniboard):
@@ -116,6 +118,12 @@ func new_game(_cell_size, _collide_duration):
 	destmb = Vector2i(-1, -1)
 	tmb = Vector2i(-1, -1)
 	fogblob.visible = false
+
+
+func game_over():
+	for t in inner_tweens:
+		t.kill()
+	blob_tween.kill()
 
 
 func get_coords(mb):

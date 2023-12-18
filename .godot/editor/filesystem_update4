@@ -6,3 +6,5 @@ res://instructions.tscn
 res://fog.tscn
 res://main.gd
 res://fog.gd
+res://gameover.tscn
+res://message.gd
