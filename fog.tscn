@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://cu636m2qh62ep"]
+
+[ext_resource type="Texture2D" uid="uid://bcupnq2wttjgs" path="res://assets/fogs/fog1.png" id="1_tcyr7"]
+[ext_resource type="Script" path="res://fog.gd" id="1_tubo7"]
+[ext_resource type="Texture2D" uid="uid://cg1i7ori35a5f" path="res://assets/fogs/fog2.png" id="2_etlmv"]
+[ext_resource type="Texture2D" uid="uid://0q4ssncgtujd" path="res://assets/fogs/fog0.png" id="2_tafvl"]
+[ext_resource type="Texture2D" uid="uid://due4lkumv5jni" path="res://assets/fogs/fog3.png" id="3_t4s0k"]
+[ext_resource type="Texture2D" uid="uid://brnvy0penp30u" path="res://assets/fogs/fog4.png" id="6_rwabm"]
+[ext_resource type="Texture2D" uid="uid://cd8u3ctycxq23" path="res://assets/fogs/fog5.png" id="7_inhrb"]
+
+[node name="Fog" type="Node2D"]
+position = Vector2(120, 120)
+script = ExtResource("1_tubo7")
+fog_textures = Array[Texture2D]([ExtResource("2_tafvl"), ExtResource("1_tcyr7"), ExtResource("2_etlmv"), ExtResource("3_t4s0k"), ExtResource("6_rwabm"), ExtResource("7_inhrb")])
+
+[node name="FogBlob" type="Node2D" parent="."]
+
+[node name="DevSeePanel" type="Panel" parent="FogBlob"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2

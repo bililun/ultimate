@@ -1,18 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://ibjm0qenul6a"]
+[gd_scene load_steps=9 format=3 uid="uid://ibjm0qenul6a"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bjkn7"]
 [ext_resource type="PackedScene" uid="uid://b45ur8y2kicpe" path="res://board.tscn" id="2_712ly"]
+[ext_resource type="PackedScene" uid="uid://3rqu2t3nfdo0" path="res://cross.tscn" id="2_vulei"]
+[ext_resource type="PackedScene" uid="uid://dep0u71m5brnm" path="res://circle.tscn" id="3_okc65"]
+[ext_resource type="PackedScene" uid="uid://bwi15thj61qer" path="res://instructions.tscn" id="5_7fv8w"]
+[ext_resource type="PackedScene" uid="uid://cu636m2qh62ep" path="res://fog.tscn" id="5_cvboi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhqun"]
+bg_color = Color(0.176471, 0.592157, 0.694118, 0.392157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6w00"]
 bg_color = Color(0.843137, 0.815686, 0.968627, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_bjkn7")
+cross_scene = ExtResource("2_vulei")
+circle_scene = ExtResource("3_okc65")
 
 [node name="Board" parent="." instance=ExtResource("2_712ly")]
 
-[node name="Panel" type="Panel" parent="."]
+[node name="HighlightPanel" type="Panel" parent="."]
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dhqun")
+
+[node name="Fog" parent="." instance=ExtResource("5_cvboi")]
+visible = false
+
+[node name="SidePanel" type="Panel" parent="."]
 offset_left = 720.0
 offset_right = 1080.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_a6w00")
+
+[node name="Instructions" parent="." instance=ExtResource("5_7fv8w")]
+
+[connection signal="button_pressed" from="Instructions" to="." method="_on_instructions_button_pressed"]

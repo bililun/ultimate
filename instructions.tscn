@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwi15thj61qer"]
+
+[ext_resource type="Texture2D" uid="uid://bwjh72jxp0sjl" path="res://assets/instructions.png" id="1_84jo5"]
+[ext_resource type="Script" path="res://instructions.gd" id="1_fd4de"]
+[ext_resource type="Texture2D" uid="uid://dkxpk2wd7cddd" path="res://assets/got it normal.png" id="2_ne51x"]
+[ext_resource type="Texture2D" uid="uid://2ksdhpkqjsr2" path="res://assets/got it pressed.png" id="3_1jt3v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wq8lj"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1mq2"]
+bg_color = Color(0.843137, 0.815686, 0.968627, 1)
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fd4de")
+
+[node name="BGPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wq8lj")
+
+[node name="CenterPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1mq2")
+
+[node name="InstructionsImage" type="Sprite2D" parent="."]
+position = Vector2(540, 200)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("1_84jo5")
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = 120.0
+offset_right = 86.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ne51x")
+texture_pressed = ExtResource("3_1jt3v")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
