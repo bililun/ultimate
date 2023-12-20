@@ -108,6 +108,8 @@ func take_turn(grid_pos):
 	toggle_turn()
 	target_miniboard = get_pos_within_miniboard(grid_pos)
 	$Fog.update_target_miniboard(target_miniboard)
+	
+	$Board.slam()
 
 	# if this is the first turn, position and visible
 	if not $HighlightPanel.visible:
@@ -122,7 +124,7 @@ func take_turn(grid_pos):
 	tween.set_trans(Tween.TRANS_CUBIC)
 	var target_pos = Vector2(target_miniboard * cell_size * 3 + Vector2i(20,20))
 	var target_size = Vector2.ONE * (cell_size * 3 - 40)
-	# if you can actually play anywhere tween to big and center
+	# if you can actually play anywhere, tween to big and center
 	if big_grid_state[target_miniboard.y][target_miniboard.x] != 0:
 		target_size = Vector2.ONE * (cell_size * 9 - 40)
 		target_pos = Vector2(20, 20)
@@ -137,7 +139,7 @@ func computer_take_turn():
 	take_turn(grid_pos)
 
 
-func handle_panel_click(event):
+func handle_panel_click(_event):
 	pass
 
 

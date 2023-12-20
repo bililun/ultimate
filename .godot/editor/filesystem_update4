@@ -10,3 +10,4 @@ res://fog.tscn
 res://gameover.tscn
 res://main.gd
 res://fog.gd
+res://board.gd

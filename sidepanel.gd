@@ -12,14 +12,14 @@ func new_game(single_player, time_per_turn):
 	textures = singleplayer_textures if single_player else twoplayer_textures
 	assert(textures.size() > 0)
 	current_texture = 0
-	$Sprite2D.texture = textures[current_texture]
+	$TurnSprite.texture = textures[current_texture]
 	
 	$Timer.stop()
 	default_time = time_per_turn
 		
 func toggle_turn():
 	current_texture = (current_texture + 1) % textures.size()
-	$Sprite2D.texture = textures[current_texture]
+	$TurnSprite.texture = textures[current_texture]
 
 func start_timer(time=default_time):
 	$Timer.set_wait_time(time+1)
@@ -30,5 +30,5 @@ func game_over():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$Label.text = "%d" % $Timer.time_left
