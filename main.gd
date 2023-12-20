@@ -203,7 +203,6 @@ func choose_smart_move():
 	# options stores Vector3s: x, y, score
 	var options = []
 	if target_miniboard == Vector2i(-1, -1) or big_grid_state[target_miniboard.y][target_miniboard.x] != 0:
-		print("whole grid available")
 		# if the whole board is available
 		for y in range(grid_state.size()):
 			for x in range(grid_state[y].size()):
@@ -235,10 +234,8 @@ func choose_smart_move():
 		
 		if would_win:
 			options[o].z = 150
-			print("winner at ", option)
 		elif would_block:
 			options[o].z = 50
-			print("blocker at ", option)
 		
 		if would_send_free:
 			options[o].z -= 75
@@ -250,13 +247,11 @@ func choose_smart_move():
 		if option.z > best_z:
 			best_options = [option]
 			best_z = option.z
-			print("found new best z ", best_z)
 		elif option.z == best_z:
 			best_options.append(option)
 	# choose randomly between best options
 	var grid_pos = best_options[randi() % best_options.size()]
 	grid_pos = Vector2i(grid_pos.x, grid_pos.y)
-	print("chose ", grid_pos)
 	return grid_pos
 
 func choose_random_move():
@@ -302,7 +297,6 @@ func _on_gameover_button_pressed():
 	new_game()
 
 func _on_timer_timeout():
-	print("timer timed out!")
 	var warn_tween = create_tween()
 	warn_tween.set_trans(Tween.TRANS_CUBIC)
 	warn_tween.tween_property($WarningPanel, "modulate:a", 0.1, 0.1)

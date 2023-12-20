@@ -12,6 +12,6 @@ func slam():
 		t.kill()
 	t = create_tween()
 	for s in range(num_slams):
-		t.tween_property(self, "position", Vector2(randi() % slam_intensity - slam_intensity/2, randi() % slam_intensity - slam_intensity/2), slam_duration)
+		t.tween_property(self, "position", Vector2(randi() % slam_intensity - slam_intensity/2.0, randi() % slam_intensity - slam_intensity/2.0), slam_duration)
 	# reset
 	t.tween_property(self, "position", Vector2.ZERO, 0.1)
