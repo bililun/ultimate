@@ -1,10 +1,11 @@
+AudioStreamPlayer2D
+Node2D
+AnimationPlayer
 Panel
 Timer
 Sprite2D
 Label
 RichTextLabel
-Node2D
-AnimationPlayer
 Control
 TextureButton
 Button

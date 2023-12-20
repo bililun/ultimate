@@ -1,7 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dep0u71m5brnm"]
+[gd_scene load_steps=7 format=3 uid="uid://dep0u71m5brnm"]
 
-[ext_resource type="Texture2D" uid="uid://cbltwgbx4yotb" path="res://assets/circle.png" id="1_uu8cl"]
+[ext_resource type="Texture2D" uid="uid://b0sgdx6phi3p7" path="res://assets/xos/o.png" id="1_srydu"]
+[ext_resource type="Script" path="res://spriteglitcher.gd" id="2_prjie"]
+[ext_resource type="Texture2D" uid="uid://dtt3ufj1lmo1n" path="res://assets/xos/o2.png" id="3_ux5xa"]
+[ext_resource type="Texture2D" uid="uid://c7nca1p75ocvb" path="res://assets/xos/o3.png" id="4_er3pf"]
+[ext_resource type="Texture2D" uid="uid://bc7yovwyfhj3n" path="res://assets/xos/o4.png" id="5_e4423"]
+[ext_resource type="AudioStream" uid="uid://dd6hii4nihrl4" path="res://assets/sound/make move4.wav" id="6_6sasy"]
 
 [node name="Circle" type="Sprite2D"]
-texture = ExtResource("1_uu8cl")
+texture = ExtResource("1_srydu")
 centered = false
+script = ExtResource("2_prjie")
+textures = Array[Texture2D]([ExtResource("3_ux5xa"), ExtResource("4_er3pf"), ExtResource("5_e4423")])
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6sasy")
+autoplay = true

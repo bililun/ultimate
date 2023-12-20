@@ -12,12 +12,16 @@ var meander_duration = 16
 var collide_duration = 0.2 # if you're running into the player's target miniboard
 
 var blob_tween
+var scale_tween
+var orig_scale
 var inner_tweens: Array
+var spriteglitcher = preload("res://spriteglitcher.gd")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	fogblob = $FogBlob
+	orig_scale = fogblob.scale
 	create_inner_tweens()
 
 
@@ -27,8 +31,9 @@ func create_inner_tweens():
 		var rotator_node = Node2D.new()
 		fogblob.add_child(rotator_node)
 
-		var fog_sprite = Sprite2D.new()
+		var fog_sprite = spriteglitcher.new()
 		fog_sprite.texture = fog_textures[t]
+		fog_sprite.textures = fog_textures # can glitch into any of the textures
 		rotator_node.add_child(fog_sprite)
 		fog_sprite.position = Vector2(randi() % spread*2 - spread, randi() % spread*2 - spread) # -spread to +spread
 		
@@ -89,10 +94,10 @@ func enter_fogblob():
 			prevmb = destmb + Vector2i.RIGHT
 		
 		fogblob.position = get_coords(prevmb)
-		fogblob.scale *= 0.5
-		var scale_tween = create_tween()
+		fogblob.scale = orig_scale / 2
+		scale_tween = create_tween()
 		scale_tween.set_trans(Tween.TRANS_CUBIC)
-		scale_tween.tween_property(fogblob, "scale", fogblob.scale * 2, meander_duration / 2.0)
+		scale_tween.tween_property(fogblob, "scale", orig_scale, meander_duration * 10.0)
 		fogblob.visible = true
 		create_blob_tween(meander_duration)
 		
@@ -124,6 +129,7 @@ func game_over():
 	for t in inner_tweens:
 		t.kill()
 	blob_tween.kill()
+	scale_tween.kill()
 
 
 func get_coords(mb):

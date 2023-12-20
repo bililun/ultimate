@@ -1,11 +1,12 @@
+res://sidepanel.gd
+res://spritecycler.gd
+res://circle.tscn
+res://spriteglitcher.gd
+res://cross.tscn
 res://main.tscn
 res://board.tscn
-res://cross.tscn
-res://circle.tscn
 res://instructions.tscn
 res://fog.tscn
+res://gameover.tscn
 res://main.gd
 res://fog.gd
-res://gameover.tscn
-res://message.gd
-res://sidepanel.gd
