@@ -1,19 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1703106279
-board.gd::GDScript::-1::1703073642::0::1::::<>Sprite2D<>::
-board.tscn::PackedScene::4485074951755843786::1703073643::0::1::::<><>::uid://cq2cyp5xbn4oh::::res://assets/board.png<>res://board.gd
-circle.tscn::PackedScene::7472538454137082866::1703073643::0::1::::<><>::uid://b0sgdx6phi3p7::::res://assets/xos/o.png<>res://spriteglitcher.gd<>uid://dtt3ufj1lmo1n::::res://assets/xos/o2.png<>uid://c7nca1p75ocvb::::res://assets/xos/o3.png<>uid://bc7yovwyfhj3n::::res://assets/xos/o4.png<>uid://dd6hii4nihrl4::::res://assets/sound/make move4.wav
-cross.tscn::PackedScene::2001390680217786809::1703073643::0::1::::<><>::uid://bp6sjdrhuxsnf::::res://assets/xos/x.png<>res://spriteglitcher.gd<>uid://ewgvqn5dj4cd::::res://assets/xos/x2.png<>uid://d3kqsokuqpn2e::::res://assets/xos/x3.png<>uid://cvwfmkj7r41gt::::res://assets/sound/make move5.wav
+::res://::1703107506
+board.gd::GDScript::-1::1703106994::0::1::::<>Sprite2D<>::
+board.tscn::PackedScene::4485074951755843786::1703106282::0::1::::<><>::uid://cq2cyp5xbn4oh::::res://assets/board.png<>res://board.gd
+circle.tscn::PackedScene::7472538454137082866::1703106282::0::1::::<><>::uid://b0sgdx6phi3p7::::res://assets/xos/o.png<>res://spriteglitcher.gd<>uid://dtt3ufj1lmo1n::::res://assets/xos/o2.png<>uid://c7nca1p75ocvb::::res://assets/xos/o3.png<>uid://bc7yovwyfhj3n::::res://assets/xos/o4.png<>uid://dd6hii4nihrl4::::res://assets/sound/make move4.wav
+cross.tscn::PackedScene::2001390680217786809::1703107062::0::1::::<><>::uid://bp6sjdrhuxsnf::::res://assets/xos/x.png<>res://spriteglitcher.gd<>uid://ewgvqn5dj4cd::::res://assets/xos/x2.png<>uid://d3kqsokuqpn2e::::res://assets/xos/x3.png<>uid://cvwfmkj7r41gt::::res://assets/sound/make move5.wav
+export_presets.cfg::TextFile::-1::1703106796::0::1::::<><>::
 fog.gd::GDScript::-1::1703066385::0::1::::<>Node2D<>::
-fog.tscn::PackedScene::6242370058658707499::1703073643::0::1::::<><>::uid://bcupnq2wttjgs::::res://assets/fogs/fog1.png<>res://fog.gd<>uid://cg1i7ori35a5f::::res://assets/fogs/fog2.png<>uid://0q4ssncgtujd::::res://assets/fogs/fog0.png<>uid://due4lkumv5jni::::res://assets/fogs/fog3.png<>uid://brnvy0penp30u::::res://assets/fogs/fog4.png<>uid://cd8u3ctycxq23::::res://assets/fogs/fog5.png
-gameover.tscn::PackedScene::5735078835360202427::1703073643::0::1::::<><>::res://message.gd<>uid://dydpmg2guyr76::::res://assets/winner.png<>uid://bw85vgt3b8xql::::res://assets/again normal.png<>uid://b7q8fq7amlr6k::::res://assets/again pressed.png
-instructions.tscn::PackedScene::3948723490600036089::1703073643::0::1::::<><>::res://message.gd<>uid://dkxpk2wd7cddd::::res://assets/got it normal.png<>uid://bsbrn6vpbke2v::::res://assets/instructions normal.png<>uid://2ksdhpkqjsr2::::res://assets/got it pressed.png<>res://spriteglitcher.gd<>uid://dc0s5dno2wpfr::::res://assets/instructions glitched.png
-main.gd::GDScript::-1::1703072109::0::1::::<>Node<>::
-main.tscn::PackedScene::564144347320613946::1703073643::0::1::::<><>::res://main.gd<>uid://b45ur8y2kicpe::::res://board.tscn<>uid://3rqu2t3nfdo0::::res://cross.tscn<>uid://dep0u71m5brnm::::res://circle.tscn<>uid://bwi15thj61qer::::res://instructions.tscn<>uid://cu636m2qh62ep::::res://fog.tscn<>res://sidepanel.gd<>uid://b1i2drbx0e8ah::::res://assets/your turn.png<>uid://cnyd57s2exhnn::::res://gameover.tscn<>uid://dydpmg2guyr76::::res://assets/winner.png<>uid://ck1akqifndp41::::res://assets/computer turn.png<>uid://dv3i8gvct2sra::::res://assets/xs turn.png<>uid://irqr3tqqierg::::res://assets/loser.png<>uid://dpam1v0ejclvd::::res://assets/os turn.png<>uid://drbhcn34jitgj::::res://assets/draw.png<>uid://daouu1wpc4g65::::res://assets/credits.png<>uid://d11q7xqrm1whw::::res://assets/sound/8-bit-game-158815.mp3
+fog.tscn::PackedScene::6242370058658707499::1703106282::0::1::::<><>::uid://bcupnq2wttjgs::::res://assets/fogs/fog1.png<>res://fog.gd<>uid://cg1i7ori35a5f::::res://assets/fogs/fog2.png<>uid://0q4ssncgtujd::::res://assets/fogs/fog0.png<>uid://due4lkumv5jni::::res://assets/fogs/fog3.png<>uid://brnvy0penp30u::::res://assets/fogs/fog4.png<>uid://cd8u3ctycxq23::::res://assets/fogs/fog5.png
+gameover.tscn::PackedScene::5735078835360202427::1703106282::0::1::::<><>::res://message.gd<>uid://dydpmg2guyr76::::res://assets/winner.png<>uid://bw85vgt3b8xql::::res://assets/again normal.png<>uid://b7q8fq7amlr6k::::res://assets/again pressed.png
+instructions.tscn::PackedScene::3948723490600036089::1703106282::0::1::::<><>::res://message.gd<>uid://dkxpk2wd7cddd::::res://assets/got it normal.png<>uid://bsbrn6vpbke2v::::res://assets/instructions normal.png<>uid://2ksdhpkqjsr2::::res://assets/got it pressed.png<>res://spriteglitcher.gd<>uid://dc0s5dno2wpfr::::res://assets/instructions glitched.png
+main.gd::GDScript::-1::1703106464::0::1::::<>Node<>::
+main.tscn::PackedScene::564144347320613946::1703106994::0::1::::<><>::res://main.gd<>uid://b45ur8y2kicpe::::res://board.tscn<>uid://3rqu2t3nfdo0::::res://cross.tscn<>uid://dep0u71m5brnm::::res://circle.tscn<>uid://bwi15thj61qer::::res://instructions.tscn<>uid://cu636m2qh62ep::::res://fog.tscn<>res://sidepanel.gd<>uid://b1i2drbx0e8ah::::res://assets/your turn.png<>uid://cnyd57s2exhnn::::res://gameover.tscn<>uid://dydpmg2guyr76::::res://assets/winner.png<>uid://ck1akqifndp41::::res://assets/computer turn.png<>uid://dv3i8gvct2sra::::res://assets/xs turn.png<>uid://irqr3tqqierg::::res://assets/loser.png<>uid://dpam1v0ejclvd::::res://assets/os turn.png<>uid://drbhcn34jitgj::::res://assets/draw.png<>uid://daouu1wpc4g65::::res://assets/credits.png<>uid://d11q7xqrm1whw::::res://assets/sound/8-bit-game-158815.mp3
 message.gd::GDScript::-1::1702902192::0::1::::<>Control<>::
 sidepanel.gd::GDScript::-1::1703073415::0::1::::<>Panel<>::
 spriteglitcher.gd::GDScript::-1::1703072084::0::1::::<>Sprite2D<>::
-::res://assets/::1703073439
+::res://assets/::1703107057
 again normal.png::CompressedTexture2D::4000559066835019999::1702900866::1702900876::1::::<><>::
 again pressed.png::CompressedTexture2D::4667507203729744260::1702900868::1702900875::1::::<><>::
 board.png::CompressedTexture2D::5951766193234865327::1702861375::1702861375::1::::<><>::
@@ -24,10 +25,8 @@ got it normal.png::CompressedTexture2D::7909561240928850021::1702871205::1702871
 got it pressed.png::CompressedTexture2D::1916841210330611181::1702871205::1702871205::1::::<><>::
 instructions glitched.png::CompressedTexture2D::7352395840219372631::1703061999::1703062189::1::::<><>::
 instructions normal.png::CompressedTexture2D::3652941312477550779::1703061993::1703062189::1::::<><>::
-instructions.png::CompressedTexture2D::3949638240970430557::1702866987::1702866993::1::::<><>::
 loser.png::CompressedTexture2D::597608502057677656::1702859778::1702859778::1::::<><>::
 os turn.png::CompressedTexture2D::8212870882008837977::1702910563::1702910563::1::::<><>::
-single fog.png::CompressedTexture2D::7817471319562214345::1702883542::1702885961::1::::<><>::
 winner.png::CompressedTexture2D::8850919973222738851::1702859778::1702859778::1::::<><>::
 xs turn.png::CompressedTexture2D::8691575359430987666::1702910563::1702910563::1::::<><>::
 your turn.png::CompressedTexture2D::4229491252021205851::1702907753::1702907753::1::::<><>::
@@ -38,12 +37,10 @@ fog2.png::CompressedTexture2D::5248191894157697009::1702887159::1702887569::1:::
 fog3.png::CompressedTexture2D::8573077428083439142::1702887159::1702887572::1::::<><>::
 fog4.png::CompressedTexture2D::3607787188699798622::1702887159::1702887574::1::::<><>::
 fog5.png::CompressedTexture2D::5052796841760968714::1702887159::1702887576::1::::<><>::
-::res://assets/sound/::1703069431
+::res://assets/sound/::1703107025
 8-bit-game-158815.mp3::AudioStreamMP3::9038875658106329228::1703066643::1703067090::1::::<><>::
-make move2.wav::AudioStreamWAV::4401450763927512968::1703068802::1703068813::1::::<><>::
 make move4.wav::AudioStreamWAV::7434264063257633391::1703069269::1703069429::1::::<><>::
 make move5.wav::AudioStreamWAV::6292548949479450879::1703069369::1703069429::1::::<><>::
-make move.wav::AudioStreamWAV::7982729258949560383::1703068717::1703068813::1::::<><>::
 ::res://assets/xos/::1703058626
 o2.png::CompressedTexture2D::8533809326921113033::1703057885::1703057885::1::::<><>::
 o3.png::CompressedTexture2D::7045844098865295331::1703057885::1703057885::1::::<><>::
@@ -52,3 +49,7 @@ o.png::CompressedTexture2D::4178671490172523358::1703057885::1703057885::1::::<>
 x2.png::CompressedTexture2D::326574350593564979::1703057885::1703057885::1::::<><>::
 x3.png::CompressedTexture2D::9146197818365000774::1703058345::1703058345::1::::<><>::
 x.png::CompressedTexture2D::3504358210831805727::1703057885::1703057885::1::::<><>::
+::res://ultimate_v1.0/::1703107501
+ultimate_v1.0.apple-touch-icon.png::CompressedTexture2D::6096321896251967060::1703107372::1703107649::1::::<><>::
+ultimate_v1.0.icon.png::CompressedTexture2D::282349889834149972::1703107372::1703107649::1::::<><>::
+ultimate_v1.0.png::CompressedTexture2D::1587620161639514260::1703107372::1703107649::1::::<><>::

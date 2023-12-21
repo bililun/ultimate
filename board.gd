@@ -7,7 +7,6 @@ extends Sprite2D
 var t: Tween
 
 func slam():
-	print("slamming")
 	if t != null:
 		t.kill()
 	t = create_tween()

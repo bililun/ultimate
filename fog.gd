@@ -62,7 +62,6 @@ func update_target_miniboard(target_miniboard):
 	if destmb == tmb:
 		# uh oh collision! get out
 		var diff = snap_and_sign(tmb - old_tmb)
-		print("dest is tmb. diff: ", diff)
 		# first try to match direction
 		var newdestmb = destmb + diff
 		if not is_in_bounds(newdestmb):
@@ -130,6 +129,7 @@ func game_over():
 		t.kill()
 	blob_tween.kill()
 	scale_tween.kill()
+	print("fog tweens killed")
 
 
 func get_coords(mb):
